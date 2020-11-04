@@ -18,13 +18,6 @@ public class Member {
 		this.address = address;
 	}
 	
-	public String getNewAddress() {
-		return newAddress;
-	}
-	public void setNewAddress(String newAddress) {
-		this.newAddress = newAddress;
-	}
-
 	public String getName() {
 		return name;
 	}
