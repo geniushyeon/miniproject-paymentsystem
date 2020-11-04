@@ -19,11 +19,6 @@ public class Member {
 		this.address = address;
 	}
 	
-//	public Member(String name, String personNumber) {
-//		this.name = name;
-//		this.personNumber = personNumber;
-//	}
-	
 	public String getNewAddress() {
 		return newAddress;
 	}
