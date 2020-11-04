@@ -28,7 +28,7 @@ public class Cart {
 	}
 	@Override
 	public String toString() {
-		return "Cart [productName=" + productName + ", productPrice=" + productPrice + "]";
+		return "상품명: " + productName + "\t\t" + "가격: " + productPrice;
 	}
 
 
