@@ -4,10 +4,12 @@ public class MemberInformation {
 
 	List<Member> memberlist = new ArrayList<>();
 	List<Cart> shoppingCart = new ArrayList<>();
+	List<Cart> wishlist = new ArrayList<>();
 	List<Pay> paymentlist = new ArrayList<>();
 	Member member = new Member();
 	Cart cart = new Cart();
 	Pay pay = new Pay();
+	
 
 	public MemberInformation() {
 		setMemberInformation();
@@ -27,14 +29,13 @@ public class MemberInformation {
 	}
 
 	public void setShoppingCart() {
-		cart = new Cart();
 		cart.setProductName("일리 커피머신");
 		cart.setProductPrice(100000);
 		shoppingCart.add(cart);
 	}
 	
 	public void	wishlist() {
-		setShoppingCart();
+		wishlist.add(cart);
 		System.out.println(cart.toString());
 	}
 	
@@ -44,7 +45,5 @@ public class MemberInformation {
 		paymentlist.add(pay);
 		
 	}
-
-
 
 }
