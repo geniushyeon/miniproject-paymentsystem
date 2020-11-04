@@ -7,7 +7,7 @@ import java.util.Scanner;
 public class PaymentSystem {
 	BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 	Scanner scan = new Scanner(System.in);
-	MemberInformation memberInformation ;
+	MemberInformation memberInformation;
 
 	public PaymentSystem() {
 		memberInformation = new MemberInformation();
@@ -19,7 +19,8 @@ public class PaymentSystem {
 
 	public void choice() {
 		while(true) {
-			System.out.println("결제하시겠습니까? 1. 예 2. 아니오 ");
+			System.out.println("결제하시겠습니까?");
+			System.out.println("1. 예\t2. 아니오");
 			System.out.print("입력: ");
 			int choice = scan.nextInt();
 			if (choice == 1) {
@@ -35,14 +36,18 @@ public class PaymentSystem {
 	}//choice();
 	
 	public void showInformation() {
-		System.out.println("고객님의 정보를 확인해주세요. ");
+		System.out.println("\n고객님의 정보를 확인해주세요. ");
+		System.out.println("==============================================");
 		memberInformation.getMemberInformation();
+		System.out.println("==============================================");
 		checkInformation();
+
 	}
 
 	public void checkInformation() {
 		while(true) {
-			System.out.println("고객님의 정보가 맞습니까? 1. 예 2. 아니오 ");
+			System.out.println("\n고객님의 정보가 맞습니까?");
+			System.out.println("1. 예\t2. 아니오");
 			System.out.print("입력: ");
 			int choice = scan.nextInt();
 			if (choice == 1) {
@@ -56,7 +61,7 @@ public class PaymentSystem {
 	}//checkInformation();
 
 	public void setNewInformation() {
-		System.out.println("고객님의 정보를 다시 설정해주세요. ");
+		System.out.println("\n고객님의 정보를 다시 설정해주세요. ");
 		System.out.print("이름: ");
 		String newName = scan.next();
 		memberInformation.member.setName(newName);
@@ -64,25 +69,32 @@ public class PaymentSystem {
 		String newPersonNumber = scan.next();
 		memberInformation.member.setPersonNumber(newPersonNumber);
 		memberInformation.memberlist.add(memberInformation.member);
-		System.out.println("입력하신 정보로 설정하였습니다. ");
+		System.out.println("\n입력하신 정보로 설정하였습니다. ");
+		System.out.println("==============================================");
 		memberInformation.getMemberInformation();
+		System.out.println("==============================================");
 	}
 
 	public void showAddress() {
-		System.out.println("회원님의 주소입니다. ");
+		System.out.println("\n회원님의 주소입니다. ");
+		System.out.println("==============================================");
 		System.out.println(memberInformation.member.getAddress());
-		
+		System.out.println("==============================================");
+
 	}
 
 	public void chooseChangeAddress() {
 		while(true) {
-			System.out.println("주소를 바꾸시겠습니까? 1. 예 2. 아니오 ");
+			System.out.println("\n주소를 바꾸시겠습니까?");
+			System.out.println("1. 예\t2. 아니오");
 			System.out.print("입력: ");
 			int choice = scan.nextInt();
 			if (choice == 1)
 				changeAddress();
 			if (choice == 2) {
+				System.out.println("==============================================");
 				System.out.println(memberInformation.member.toString());
+				System.out.println("==============================================");
 				checkCart();
 				break;
 			}
@@ -91,7 +103,7 @@ public class PaymentSystem {
 	
 
 	public void changeAddress() {
-		System.out.println("바꿀 주소를 입력하세요. ");
+		System.out.println("\n바꿀 주소를 입력하세요. ");
 		System.out.print("새 주소: ");
 		String newAddress = null;
 		try {
@@ -101,16 +113,21 @@ public class PaymentSystem {
 		}
 		memberInformation.member.setAddress(newAddress);
 		memberInformation.memberlist.add(memberInformation.member);
-		System.out.println("입력하신 주소로 설정하였습니다. ");
+		System.out.println("\n입력하신 주소로 설정하였습니다. ");
+		System.out.println("==============================================");
 		System.out.println(memberInformation.member.toString());
+		System.out.println("==============================================");
 
 	}
 
 
 	public void checkCart() {
-		System.out.println("회원님이 주문하신 상품 목록과 결제 금액입니다. ");
+		System.out.println("\n회원님이 주문하신 상품 목록과 결제 금액입니다. ");
+		System.out.println("==============================================");
 		System.out.println(memberInformation.cart.toString());
-		System.out.println("결제하시겠습니까? 1. 예 2. 아니오 ");
+		System.out.println("==============================================");
+		System.out.println("\n결제하시겠습니까?");
+		System.out.println("1. 예\t2. 아니오");
 		System.out.print("입력: ");
 		int choice = scan.nextInt();
 		if (choice == 1) {
@@ -124,14 +141,16 @@ public class PaymentSystem {
 	}
 
 	public void shoppingcart() {
-		System.out.println("장바구니의 상품을 관심 물품에 등록하였습니다.");
+		System.out.println("\n장바구니의 상품을 관심 물품에 등록하였습니다.");
+		System.out.println("==============================================");
 		memberInformation.wishlist();
+		System.out.println("==============================================");
 	}
 
 	public void choosePayment() {
 		while(true) {
-			System.out.println("결제 방법을 선택하세요. ");
-			System.out.println("1. 포인트 2. 신용카드  ");
+			System.out.println("\n결제 방법을 선택하세요. ");
+			System.out.println("1. 포인트\t2. 신용카드  ");
 			System.out.print("입력: ");
 			int choice = scan.nextInt();
 			if (choice == 1) {
@@ -149,17 +168,17 @@ public class PaymentSystem {
 
 	public void payment() {
 		while(true) {
-			System.out.print("카드 번호를 입력하세요: ");
+			System.out.print("\n카드 번호를 입력하세요: ");
 			long cardNumber = scan.nextInt();
 			System.out.print("카드 비밀번호를 입력하세요: ");
 			long password = scan.nextInt();
 
 			if (cardNumber == memberInformation.pay.getCardNumber() && password == memberInformation.pay.getPassword()) {
-				System.out.println("결제가 완료되었습니다. 감사합니다. ");
+				System.out.println("\n결제가 완료되었습니다. 감사합니다. ");
 				break;
 			}
 			else {
-				System.out.println("카드 번호와 비밀번호를 다시 입력하세요.");
+				System.out.println("\n카드 번호와 비밀번호를 다시 입력하세요.");
 			}
 
 		}

@@ -25,7 +25,8 @@ public class MemberInformation {
 	}
 
 	public void getMemberInformation() {
-		System.out.println("이름: " + member.getName() + ", 생년월일: " + member.getPersonNumber());
+		System.out.println("이름: " + member.getName() + "\t생년월일: " + member.getPersonNumber());
+
 	}
 
 	public void setShoppingCart() {
@@ -37,6 +38,7 @@ public class MemberInformation {
 	public void	wishlist() {
 		wishlist.add(cart);
 		System.out.println(cart.toString());
+
 	}
 	
 	public void setPaymentInformation() {
