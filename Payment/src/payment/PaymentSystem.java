@@ -13,11 +13,7 @@ public class PaymentSystem {
 		memberInformation = new MemberInformation();
 	}
 
-	public void run() {
-		choice();
-	}
-
-	public void choice() {
+	public void	run() {
 		while(true) {
 			System.out.println("결제하시겠습니까?");
 			System.out.println("1. 예\t2. 아니오");
@@ -33,7 +29,7 @@ public class PaymentSystem {
 				break;
 			}
 		}
-	}//choice();
+	}
 	
 	public void showInformation() {
 		System.out.println("\n고객님의 정보를 확인해주세요. ");
