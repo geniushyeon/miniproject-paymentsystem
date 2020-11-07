@@ -32,10 +32,8 @@ public class PaymentSystem {
 	}
 	
 	public void showInformation() {
-		System.out.println("\n고객님의 정보를 확인해주세요. ");
-		System.out.println("==============================================");
-		memberInformation.getMemberInformation();
-		System.out.println("==============================================");
+		System.out.println("\n고객님의 정보를 확인해주세요.\n");
+		memberInformation.getMemberNameAndNumber();
 		checkInformation();
 
 	}
@@ -60,22 +58,17 @@ public class PaymentSystem {
 		System.out.println("\n고객님의 정보를 다시 설정해주세요. ");
 		System.out.print("이름: ");
 		String newName = scan.next();
-		memberInformation.member.setName(newName);
+		memberInformation.memberlist.get(0).setName(newName);
 		System.out.print("주민등록번호 : ");
 		String newPersonNumber = scan.next();
-		memberInformation.member.setPersonNumber(newPersonNumber);
-		memberInformation.memberlist.add(memberInformation.member);
-		System.out.println("\n입력하신 정보로 설정하였습니다. ");
-		System.out.println("==============================================");
-		memberInformation.getMemberInformation();
-		System.out.println("==============================================");
+		memberInformation.memberlist.get(0).setPersonNumber(newPersonNumber);
+		System.out.println("\n입력하신 정보로 설정하였습니다.\n");
+		memberInformation.getMemberNameAndNumber();
 	}
 
 	public void showAddress() {
-		System.out.println("\n회원님의 주소입니다. ");
-		System.out.println("==============================================");
-		System.out.println(memberInformation.member.getAddress());
-		System.out.println("==============================================");
+		System.out.println("\n회원님의 주소입니다.\n");
+		System.out.println(memberInformation.memberlist.get(0).getAddress());
 
 	}
 
@@ -88,9 +81,7 @@ public class PaymentSystem {
 			if (choice == 1)
 				changeAddress();
 			if (choice == 2) {
-				System.out.println("==============================================");
-				System.out.println(memberInformation.member.toString());
-				System.out.println("==============================================");
+				memberInformation.getMemberInformation();
 				checkCart();
 				break;
 			}
@@ -107,21 +98,16 @@ public class PaymentSystem {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		memberInformation.member.setAddress(newAddress);
-		memberInformation.memberlist.add(memberInformation.member);
-		System.out.println("\n입력하신 주소로 설정하였습니다. ");
-		System.out.println("==============================================");
-		System.out.println(memberInformation.member.toString());
-		System.out.println("==============================================");
+		memberInformation.memberlist.get(0).setAddress(newAddress);
+		System.out.println("\n입력하신 주소로 설정하였습니다.\n");
+		System.out.println(memberInformation.memberlist.get(0).getAddress());
 
 	}
 
 
 	public void checkCart() {
 		System.out.println("\n회원님이 주문하신 상품 목록과 결제 금액입니다. ");
-		System.out.println("==============================================");
-		System.out.println(memberInformation.cart.toString());
-		System.out.println("==============================================");
+		memberInformation.getShoppingCart();
 		System.out.println("\n결제하시겠습니까?");
 		System.out.println("1. 예\t2. 아니오");
 		System.out.print("입력: ");
@@ -138,9 +124,7 @@ public class PaymentSystem {
 
 	public void shoppingcart() {
 		System.out.println("\n장바구니의 상품을 관심 물품에 등록하였습니다.");
-		System.out.println("==============================================");
 		memberInformation.wishlist();
-		System.out.println("==============================================");
 	}
 
 	public void choosePayment() {

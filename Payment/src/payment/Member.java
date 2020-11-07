@@ -44,7 +44,7 @@ public class Member {
 
 	@Override
 	public String toString() {
-		return "이름: " + name + "\t생년월일: " + personNumber + "\t주소: " + address;
+		return name + "\t" + personNumber + "\t" + address;
 	}
 
 

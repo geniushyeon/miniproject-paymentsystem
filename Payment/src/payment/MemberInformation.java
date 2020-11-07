@@ -24,9 +24,18 @@ public class MemberInformation {
 		memberlist.add(member);
 	}
 
-	public void getMemberInformation() {
-		System.out.println("이름: " + member.getName() + "\t생년월일: " + member.getPersonNumber());
+	public void getMemberNameAndNumber() {
+		System.out.println("이름\t생년월일");
+		System.out.println("------------------");
+		System.out.println(member.getName() + "\t" + member.getPersonNumber());
 
+	}
+	
+	public void getMemberInformation() {
+
+		System.out.println("\n이름\t생년월일\t주소");
+		System.out.println("------------------------------------");
+		System.out.println(member.toString());
 	}
 
 	public void setShoppingCart() {
@@ -35,9 +44,17 @@ public class MemberInformation {
 		shoppingCart.add(cart);
 	}
 	
+	public void getShoppingCart() {
+		System.out.println("\n상품명\t\t가격");
+		System.out.println("-------------------------");
+		System.out.println(cart.toString());
+	}
+	
 	public void	wishlist() {
 		wishlist.add(cart);
-		System.out.println(cart.toString());
+		System.out.println("상품명\t\t가격");
+		System.out.println("------------------------");
+		System.out.println(wishlist.get(0));
 
 	}
 	
